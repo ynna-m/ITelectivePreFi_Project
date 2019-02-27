@@ -1,25 +1,49 @@
 var currUnit;
 var currLetter;
-var total;
+var unitTotal = 0;
+var total = 0;
 
 var clickMe = function() {
   ons.notification.alert('oh well. Please work');
 };
 
-function concatLetter(let, x)
+var concatLetter = function(let, x)
 {
 	currLetter = x;
-	document.getElementByID('top-input').value = document.getElementByID('top-input').value + "(" + let + " * ";
-}
+	document.getElementById('top-input').value = document.getElementById('top-input').value + "(" + let + " x ";
+	var u = document.getElementsByClassName('unit');
+	var l = document.getElementsByClassName('letter');
+	for(var i=0; i <  u.length; i++)
+	{
+		u[i].disabled = false;
+	}
+	for(var i=0; i < l.length; i++)
+	{
+		l[i].disabled = true;
+	}
+	document.getElementById('equals').disabled = true;
+};
 
-function concatUnit(n)
+var concatUnit = function(n)
 {
 	currUnit = n;
+	unitTotal = unitTotal + currUnit;
 	total = total + (currUnit * currLetter);
-	document.getElementByID('top-input').value = document.getElementByID('top-input').value + n ") + ";
-}
+	document.getElementById('top-input').value = document.getElementById('top-input').value + n + ") + ";
+	var u = document.getElementsByClassName('unit');
+	var l = document.getElementsByClassName('letter');
+	for(var i=0; i <  u.length; i++)
+	{
+		u[i].disabled = true;
+	}
+	for(var i=0; i < l.length; i++)
+	{
+		l[i].disabled = false;
+	}
+	document.getElementById('equals').disabled = false;
+};
 
-function sum()
+var sum = function()
 {
-	document.getElementByID('bottom-input').value = total;
-}
+	document.getElementById('bottom-input').value = total/unitTotal;
+};
