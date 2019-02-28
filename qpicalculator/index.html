@@ -13,18 +13,36 @@
     }
     .Demo .unit{
       width:100%;
-      padding:10px 0px;
+      padding:5% 0;
       background-color:coral;
     }
     .Demo .letter{
       width:100%;
-      padding:15px 0px;
-      background-color: Teal;
+      padding:7% 0;
+      background-color: steelblue;
     }
-    .Demo .fourthrow{
+    .Demo #clear{
       width:100%;
-      padding:15px 0px;
+      padding:3% 0;
       background-color:tomato;
+    }
+    .Demo #equals{
+      width:100%;
+      padding:7% 0;
+      background-color:#69a042;
+    }
+    #top-input{
+      width:100%;
+      height:5%;
+      padding:2% 0;
+      font-size:18pt;
+      text-align:right;
+    }
+    #bottom-input{
+      width:100%;
+      height:8%;
+      font-size:30pt;
+      text-align:right;
     }
     /*#top-input {
       color:rgba(255,255,255,1.0);
@@ -38,10 +56,10 @@
     <ons-page id="my-page">
       <!--<ons-button onclick="clickMe()">Muah</ons-button>-->
       <div>
-        <input type="text" id="top-input" class="text-input text-input--underbar"  value="" style="width:100%;height:50px;font-size:20px;text-align:right;" disabled>
+        <input type="text" id="top-input" class="text-input text-input--underbar"  value=""  disabled>
       </div>
       <div>
-        <input type="text" id="bottom-input" class="text-input text-input--underbar"  value="" style="width:100%;height:70px;font-size:50px;text-align:right;" disabled>
+        <input type="text" id="bottom-input" class="text-input text-input--underbar"  value="" disabled>
       </div>
     <div class="space" style="width:100%;height:20px;">
 
@@ -114,16 +132,16 @@
             <ons-button type="button" id="F" name="F" class="letter"  onclick="concatLetter('F', 0.0)">F</button>
           </div>
         </ons-col>
+        <ons-col>
+          <div class="Demo">
+            <ons-button type="button" id="equals" name="equals" class="fourthrow"  onclick="sum()">=</button>
+          </div>
+        </ons-col>
       </ons-row>
       <ons-row>
         <ons-col>
           <div class="Demo">
             <ons-button type="button" id="clear" name="clear" class="fourthrow"  onclick="sum()">CLEAR</button>
-          </div>
-        </ons-col>
-        <ons-col>
-          <div class="Demo">
-            <ons-button type="button" id="equals" name="equals" class="fourthrow"  onclick="sum()">=</button>
           </div>
         </ons-col>
       </ons-row>
